@@ -41,8 +41,12 @@ const LoadingSkeleton = () => {
 
 const Landing = () => {
  const currentImage = useCarousel({ totalImages: 3});
+
  const { data: courses, isLoading, isError } = useGetCoursesQuery({});
- console.log("courses:", courses);
+ console.log("courses: ", courses);
+
+
+
 
   return (
     <motion.div
