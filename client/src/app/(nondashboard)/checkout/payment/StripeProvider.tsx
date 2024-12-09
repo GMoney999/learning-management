@@ -62,4 +62,4 @@ const StripeProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default StripeProvider; 
+export default StripeProvider;

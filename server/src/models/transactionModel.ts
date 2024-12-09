@@ -1,4 +1,4 @@
-import { Schema, model } from "dynamoose";
+ import { Schema, model } from "dynamoose";
 
 const transactionSchema = new Schema(
   {

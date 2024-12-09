@@ -40,7 +40,7 @@ const PaymentPageContent = () => {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${baseUrl}/checkout?step=3&id=${courseId}`,
+        return_url: `${process.env.NEXT_PUBLIC_STRIPE_REDIRECT_URL}?id-${courseId}`,
       },
       redirect: "if_required",
     });
@@ -115,7 +115,7 @@ const PaymentPageContent = () => {
           Switch Account
         </Button>
 
-        <Button
+        <Button 
           form="payment-form"
           type="submit"
           className="payment__submit"
