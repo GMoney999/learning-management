@@ -25,6 +25,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <title>Moonfall</title>
+        </head>
         <body className={`${dmSans.className}`}>
           <Providers>
             <Suspense fallback={null}>
