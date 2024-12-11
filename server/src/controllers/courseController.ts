@@ -87,14 +87,12 @@ export const updateCourse = async (
     }
 
     if (course.teacherId !== userId) {
-      res
-        .status(403)
-        .json({ message: "Not authorized to update this course " });
+      res.status(403).json({ message: "Not authorized to update this course" });
       return;
     }
 
     if (updateData.price) {
-      const price = parseInt(updateData.price);
+      const price = parseInt(updateData.price, 10);
       if (isNaN(price)) {
         res.status(400).json({
           message: "Invalid price format",
@@ -117,6 +115,10 @@ export const updateCourse = async (
         chapters: section.chapters.map((chapter: any) => ({
           ...chapter,
           chapterId: chapter.chapterId || uuidv4(),
+          video:
+            typeof chapter.video === "string"
+              ? chapter.video
+              : (chapter.video?.url || "")
         })),
       }));
     }
