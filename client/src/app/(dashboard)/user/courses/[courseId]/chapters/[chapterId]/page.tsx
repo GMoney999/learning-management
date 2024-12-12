@@ -78,7 +78,7 @@ const Course = () => {
             {currentChapter?.video ? (
               <ReactPlayer
                 ref={playerRef}
-                url={currentChapter.video as string}
+                url={"https://" + currentChapter.video as string}
                 controls
                 width="100%"
                 height="100%"

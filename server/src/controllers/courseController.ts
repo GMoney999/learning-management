@@ -184,7 +184,9 @@ export const getUploadVideoUrl = async (
     };
 
     const uploadUrl = s3.getSignedUrl("putObject", s3Params);
-    const videoUrl = `https://${process.env.CLOUDFRONT_DOMAIN}/videos/${uniqueId}/${fileName}`;
+    const videoUrl = `${process.env.CLOUDFRONT_DOMAIN}/videos/${uniqueId}/${fileName}`;
+
+    console.log("Generated videoUrl:", videoUrl); // Debugging step
 
     res.json({
       message: "Upload URL generated successfully",
