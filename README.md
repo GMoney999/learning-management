@@ -19,46 +19,44 @@ Moonfall is a learning management system (LMS) designed to help educators and ad
 
    **Client `.env` example**:
 
-        NEXT_PUBLIC_API_BASE_URL=http://localhost:8001/
-        NEXT_PUBLIC_LOCAL_URL=http://localhost:3000/
+    NEXT_PUBLIC_API_BASE_URL=http://localhost:8001/
+    NEXT_PUBLIC_LOCAL_URL=http://localhost:3000/
 
-        NEXT_PUBLIC_STRIPE_PUBLIC_KEY=YOUR-STRIPE-PUBLIC-KEY
-        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=YOUR-CLERK-PUBLISHABLE-KEY
-        CLERK_SECRET_KEY=YOUR-CLERK-SECRET-KEY
+    NEXT_PUBLIC_STRIPE_PUBLIC_KEY=YOUR-STRIPE-PUBLIC-KEY
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=YOUR-CLERK-PUBLISHABLE-KEY
+    CLERK_SECRET_KEY=YOUR-CLERK-SECRET-KEY
 
     **Server `.env` example**:
 
-        PORT=8001
-        NODE_ENV=development
+    PORT=8001
+    NODE_ENV=development
 
-        AWS_REGION=YOUR-AWS-REGION
-        S3_BUCKET_NAME=YOUR-S3-BUCKET-NAME
-        CLOUDFRONT_DOMAIN=YOUR-CLOUDFRONT-DOMAIN
+    AWS_REGION=YOUR-AWS-REGION
+    S3_BUCKET_NAME=YOUR-S3-BUCKET-NAME
+    CLOUDFRONT_DOMAIN=YOUR-CLOUDFRONT-DOMAIN
 
-        STRIPE_SECRET_KEY=YOUR-STRIPE-SECRET-KEY
+    STRIPE_SECRET_KEY=YOUR-STRIPE-SECRET-KEY
 
-        CLERK_PUBLISHABLE_KEY=YOUR-CLERK-PUBLISHABLE-KEY
-        CLERK_SECRET_KEY=YOUR-CLERK-SECRET-KEY
+    CLERK_PUBLISHABLE_KEY=YOUR-CLERK-PUBLISHABLE-KEY
+    CLERK_SECRET_KEY=YOUR-CLERK-SECRET-KEY
+
 
 5. **Start the application**  
     
     Run `npm run dev` on **BOTH** the server side and client side.
 
 6. **Access the application**  
-
+    
     Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to see the content and create accounts/demo the features.
 
 
 ### Sidenote:
-
 To create a teacher account:
-
-    - First, create a regular account within the application.
-    - Go to the **Clerk authentication dashboard** and edit the user's profile by modifying the **PUBLIC metadata** to the following format:
-
-    ```json
-    {
-        "userType": "teacher"
-    }
+- First, create a regular account within the application.
+- Go to the **Clerk authentication dashboard** and edit the user's profile by modifying the **PUBLIC metadata** to the following format:
+```json
+{
+   "userType": "teacher"
+}
 
 Save the changes and refresh your browser. You will then be able to access /teacher/courses.
